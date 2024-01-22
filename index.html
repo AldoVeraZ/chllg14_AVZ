@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Registro</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="horizontal-padding vertical-padding">
+      <form class="formulario" onsubmit="return validarFormulario()">
+        <div class="formulario__campo" id="campoPrimerNombre">
+          <label for="primerNombre" class="formulario__etiqueta"
+            >Primer nombre:</label
+          >
+          <input
+            type="text"
+            id="primerNombre"
+            name="primerNombre"
+            class="formulario__input"
+            oninput="validarPrimerNombre()"
+          />
+          <span class="formulario__error">Error de validación.</span>
+        </div>
+
+        <div class="formulario__campo" id="campoPrimerApellido">
+          <label for="primerApellido" class="formulario__etiqueta"
+            >Primer apellido:</label
+          >
+          <input
+            type="text"
+            id="primerApellido"
+            name="primerApellido"
+            class="formulario__input"
+            oninput="validarPrimerApellido()"
+          />
+          <span class="formulario__error">Error de validación.</span>
+        </div>
+
+        <div class="formulario__campo" id="campoTipoDocumento">
+          <span class="formulario__etiqueta">Tipo de documento:</span>
+          <div class="formulario__radio-grupo">
+            <label class="formulario__radio-etiqueta">
+              <input
+                type="radio"
+                name="tipoDocumento"
+                value="DNI"
+                onclick="habilitarNumeroDocumento()"
+              />
+              DNI
+            </label>
+            <label class="formulario__radio-etiqueta">
+              <input
+                type="radio"
+                name="tipoDocumento"
+                value="CUIL"
+                onclick="habilitarNumeroDocumento()"
+              />
+              CUIL
+            </label>
+          </div>
+          <span class="formulario__error">Seleccione una opción.</span>
+        </div>
+
+        <!-- 
+          <div class="formulario__campo" id="campoTipoDocumento">
+            <span class="formulario__etiqueta">Tipo de documento:</span>
+            <label class="formulario__radio-etiqueta">
+              <input
+                type="radio"
+                name="tipoDocumento"
+                value="DNI"
+                onclick="habilitarNumeroDocumento()"
+              />
+              DNI
+            </label>
+            <label class="formulario__radio-etiqueta">
+              <input
+                type="radio"
+                name="tipoDocumento"
+                value="CUIL"
+                onclick="habilitarNumeroDocumento()"
+              />
+              CUIL
+            </label>
+            <span class="formulario__error">Seleccione una opción.</span>
+          </div> -->
+
+        <div class="formulario__campo" id="campoNumeroDocumento">
+          <label for="numeroDocumento" class="formulario__etiqueta"
+            >Número de documento:</label
+          >
+          <input
+            type="text"
+            id="numeroDocumento"
+            name="numeroDocumento"
+            class="formulario__input"
+            disabled
+            oninput="validarNumeroDocumento()"
+          />
+          <span class="formulario__error">Error de validación.</span>
+        </div>
+
+        <div class="formulario__campo" id="campoDireccion">
+          <label for="direccion" class="formulario__etiqueta">Dirección:</label>
+          <input
+            type="text"
+            id="direccion"
+            name="direccion"
+            class="formulario__input"
+            oninput="validarDireccion()"
+          />
+          <span class="formulario__error">Error de validación.</span>
+        </div>
+        <div class="formulario__campo" id="campoEmail">
+          <label for="email" class="formulario__etiqueta">Email:</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            class="formulario__input"
+            oninput="validarEmail()"
+          />
+          <span class="formulario__error">Error de validación.</span>
+        </div>
+        <div id="resumenErrores" class="resumen-errores"></div>
+
+        <!-- Botón de envío y reseteo -->
+        <div class="formulario__campo">
+          <div class="formulario-spacing">
+            <input type="submit" value="Enviar" class="formulario__boton" />
+            <input
+              type="reset"
+              value="Resetear"
+              class="formulario__boton"
+              onclick="resetearFormulario()"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="./validacion.js"></script>
+  </body>
+</html>

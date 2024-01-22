@@ -1,0 +1,179 @@
+/* Estilos Base */
+body {
+  background-color: #151517;
+}
+.formulario {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px; /* Resolución máxima */
+  margin: 0 auto;
+  background-color: #404040;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.formulario__boton {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+  border: none;
+  background-color: #008746;
+  color: #ffffff;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+.formulario__boton:hover {
+  background-color: #0056b3;
+}
+
+.formulario__etiqueta {
+  color: #ffffff;
+}
+
+.formulario__radio-etiqueta {
+  color: #ffffff;
+}
+
+.formulario__campo {
+  margin-bottom: 15px;
+}
+
+.formulario__etiqueta,
+.formulario__input,
+.formulario__radio-etiqueta {
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.formulario__input,
+.formulario__boton {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Estilos de error */
+.formulario__error {
+  color: red;
+  font-size: 0.8em;
+  display: none; /* Oculto por defecto */
+
+  /* Transiciones para mensajes de error */
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.formulario__campo--error .formulario__error {
+  display: block;
+  opacity: 1;
+  height: auto;
+}
+
+/* Feedback en hover y focus para inputs */
+.formulario__input:hover,
+.formulario__input:focus {
+  border-color: #007bff; /* Color de ejemplo */
+  transition: border-color 0.3s ease-in-out;
+}
+
+.formulario__radio-grupo {
+  display: flex; /* Alinea los elementos horizontalmente */
+  justify-content: flex-start; /* Comienza la alineación desde el inicio */
+  gap: 10px; /* Espacio entre los botones de radio */
+}
+
+.formulario__radio-etiqueta {
+  display: flex; /* Alinea el input y el texto del label */
+  align-items: center; /* Centra verticalmente el texto con el botón */
+}
+
+/* Estilos para resoluciones de pantalla */
+@media (min-width: 425px) {
+  .formulario__etiqueta,
+  .formulario__input {
+    display: inline-block;
+    width: auto;
+    margin-right: 10px;
+  }
+  .horizontal-padding {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .vertical-padding {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+}
+
+@media (min-width: 768px) {
+  .horizontal-padding {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+  .vertical-padding {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  /* Estilo para los campos del formulario, excepto el de dirección */
+  .formulario__campo:not(#campoDireccion) {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+
+  /* Estilo para las etiquetas y los inputs */
+  .formulario__etiqueta,
+  .formulario__input,
+  .formulario__radio-etiqueta {
+    width: 60%;
+  }
+
+  /* Ajustar el contenedor del formulario para dos columnas */
+  .formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  /* Dirección en una fila completa */
+  #campoDireccion {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1000px) {
+  .horizontal-padding {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+  .vertical-padding {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  .formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .formulario__campo {
+    width: 100%; /* Ajustar para que ocupe toda la columna */
+    padding: 15px;
+  }
+
+  .formulario-spacing {
+    grid-column: 1 / -1; /* Hace que ocupe ambas columnas */
+    display: flex;
+    justify-content: center; /* Centra los botones */
+    gap: 50px; /* Espacio entre botones */
+  }
+
+  .formulario__boton {
+    padding: 10px 20px; /* Aumenta el tamaño del botón */
+    width: auto; /* Ajustar el ancho según sea necesario */
+  }
+}
