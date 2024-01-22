@@ -132,14 +132,12 @@ body {
     width: 60%;
   }
 
-  /* Ajustar el contenedor del formulario para dos columnas */
   .formulario {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
   }
 
-  /* Dirección en una fila completa */
   #campoDireccion {
     grid-column: 1 / -1;
   }
@@ -161,19 +159,19 @@ body {
   }
 
   .formulario__campo {
-    width: 100%; /* Ajustar para que ocupe toda la columna */
+    width: 100%;
     padding: 15px;
   }
 
   .formulario-spacing {
-    grid-column: 1 / -1; /* Hace que ocupe ambas columnas */
+    grid-column: 1 / -1;
     display: flex;
-    justify-content: center; /* Centra los botones */
-    gap: 50px; /* Espacio entre botones */
+    justify-content: center;
+    gap: 50px;
   }
 
   .formulario__boton {
-    padding: 10px 20px; /* Aumenta el tamaño del botón */
-    width: auto; /* Ajustar el ancho según sea necesario */
+    padding: 10px 20px;
+    width: auto;
   }
 }
